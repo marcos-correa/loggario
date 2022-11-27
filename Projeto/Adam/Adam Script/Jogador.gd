@@ -9,6 +9,7 @@ var power_pena1 = false
 var power_pena2 = 1
 
 func _ready():
+	
 	#$Camera2D.zoom.x = lerp($Camera2D.zoom.x, zoom, 0.1)
 	#$Camera2D.zoom.y = lerp($Camera2D.zoom.y, zoom, 0.1)
 	tempo_vida = 100
@@ -19,6 +20,8 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
+	if(tempo_vida == 0):
+		get_tree().change_scene("res://Menu/Menu.tscn")
 	if Input.is_action_just_pressed("ui_page_up"): 
 		$Camera2D.zoom.x = 3
 		$Camera2D.zoom.y = 3
@@ -63,6 +66,7 @@ func _process(delta):
 	
 	if $MeshInstance2D/Area2D.overlaps_area(win):
 		print("teste" + String(tempo_vida))
+		get_tree().change_scene("res://Menu/Menu.tscn")
 	
 	for i in aux:
 		if $MeshInstance2D/Area2D.overlaps_area(i): 
