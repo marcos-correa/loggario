@@ -11,7 +11,7 @@ var grid_scale
 var zoom = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	grid_scale = grid.rect_size / (get_viewport_rect().size * 3)
+	grid_scale = grid.rect_size / (get_viewport_rect().size * 3.5)
 	
 	pass # Replace with function body.
 
